@@ -1,6 +1,9 @@
 import Blits from '@lightningjs/blits'
 import Panel from '../components/Panel.js'
 import WeatherNow from '../components/WeatherNow.js'
+// Integration hint: to render horizontally scrollable forecast carousels, import:
+// import ForecastList from '../components/ForecastList.js'
+// import ForecastItem from '../components/ForecastItem.js'
 
 export default Blits.Component('Home', {
   components: { Panel, WeatherNow },

@@ -1,4 +1,6 @@
 import Blits from '@lightningjs/blits'
+// Integration hint: use ForecastList for hourly and daily sections
+// import ForecastList from '../components/ForecastList.js'
 
 /**
  * Forecast page
