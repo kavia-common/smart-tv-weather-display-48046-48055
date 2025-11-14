@@ -1,8 +1,9 @@
 import Blits from '@lightningjs/blits'
 import Panel from '../components/Panel.js'
+import WeatherNow from '../components/WeatherNow.js'
 
 export default Blits.Component('Home', {
-  components: { Panel },
+  components: { Panel, WeatherNow },
 
   state() {
     return {
@@ -12,14 +13,17 @@ export default Blits.Component('Home', {
 
   template: `
     <Element w="1920" h="960">
-      <Panel x="80" y="40" w="760" h="360" header="Current Weather">
-        <Text x="0" y="0" content="Temperature:" fontSize="36" color="0xff111827" />
-        <Text x="0" y="56" content="Wind:" fontSize="30" color="0xff374151" />
-      </Panel>
+      <!-- Current conditions hero component -->
+      <WeatherNow />
 
-      <Panel x="880" y="40" w="960" h="360" header="Highlights" elevated="true">
+      <!-- Secondary panels below -->
+      <Panel x="80" y="700" w="760" h="320" header="Highlights">
         <Text x="0" y="0" content="UV Index:" fontSize="36" color="0xff111827" />
         <Text x="0" y="56" content="Humidity:" fontSize="30" color="0xff374151" />
+      </Panel>
+
+      <Panel x="880" y="700" w="960" h="320" header="Tips" elevated="true">
+        <Text x="0" y="0" content="Press Enter on current conditions to view the forecast." fontSize="30" color="0xff374151" />
       </Panel>
     </Element>
   `,
