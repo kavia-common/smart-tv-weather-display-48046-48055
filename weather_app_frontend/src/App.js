@@ -1,31 +1,20 @@
 import Blits from '@lightningjs/blits'
-
 import Home from './pages/Home.js'
 import Forecast from './pages/Forecast.js'
 import Settings from './pages/Settings.js'
+import Theme from './plugins/theme.js'
 
 /**
  * App shell for the Smart TV Weather app.
  * - Provides RouterView for page rendering
  * - Registers '/', '/forecast', '/settings' routes
- * - Wires a simple theme and global store placeholder for future use
+ * - Registers global Ocean Professional theme plugin
  */
 export default Blits.Application({
-  // Basic app-level theme placeholder following Ocean Professional palette
-  theme: {
-    colors: {
-      primary: '#2563EB',
-      secondary: '#F59E0B',
-      surface: '#ffffff',
-      background: '#0b1220', // deeper blue for TV black levels
-      text: '#E5E7EB',
-      error: '#EF4444',
-    },
-    radius: 12,
-    shadow: { alpha: 0.2 },
-  },
+  // Register theme plugin for global access via this.$theme
+  plugins: [Theme.plugin],
 
-  // Minimal global store placeholder - can be expanded later
+  // Global store placeholder (kept)
   store: {
     location: 'New York, US',
     units: 'metric', // 'metric' | 'imperial'
