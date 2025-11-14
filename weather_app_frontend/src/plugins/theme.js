@@ -45,7 +45,6 @@ const radii = {
 }
 
 // Elevation presets for subtle depth on large screens
-// Lightning uses alpha for visual depth; we provide common shadow-like overlays
 const elevation = {
   none: { alpha: 1.0, overlay: 'rgba(0,0,0,0.00)' },
   '1': { alpha: 1.0, overlay: 'rgba(0,0,0,0.04)' },
@@ -56,7 +55,6 @@ const elevation = {
 
 // Typography suggestions (for consistency across components)
 const typography = {
-  // Sizes are reference values; use with Text component fontSize
   display: 64,
   h1: 48,
   h2: 36,
@@ -73,12 +71,6 @@ const typography = {
 
 // Helpers / utilities
 const utils = {
-  /**
-   * Simple vertical gradient helper.
-   * Returns a gradient descriptor that can be used by components that support texture generation.
-   * Note: Lightning/Blits doesn't support CSS gradients; app code should generate textures/shaders if needed.
-   * For convenience, we also return a fallback color (the "to" color).
-   */
   // PUBLIC_INTERFACE
   gradient(fromColor = colors.primary, toColor = colors.background, alpha = 1.0) {
     /** Returns an object describing a vertical gradient with a fallback color. */
@@ -91,10 +83,6 @@ const utils = {
     }
   },
 
-  /**
-   * Apply elevation overlay color onto a base color.
-   * Returns an RGBA string that can be used as an overlay element color.
-   */
   // PUBLIC_INTERFACE
   elevationOverlay(level = 1) {
     /** Returns overlay RGBA for a given elevation level. */
